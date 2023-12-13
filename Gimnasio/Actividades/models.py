@@ -28,8 +28,8 @@ class Actividad(models.Model):
         ordering = ['id']
 
 class Clase(models.Model):
-    fecha = models.DateField(auto_now_add=True)
     actividad = models.ForeignKey(Actividad, on_delete=models.DO_NOTHING)
-    asistencia = models.CharField(max_length=30, default='Sin registro')
+    fecha = models.DateField(auto_now_add=True)
+    asistencia = models.CharField(max_length=30, default='Presente')
 
 

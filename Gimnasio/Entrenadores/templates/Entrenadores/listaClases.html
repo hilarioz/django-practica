@@ -8,7 +8,12 @@
 </head>
 <body>
     <h2>{{titulo}}</h2>
-
+    <a href=" {% url 'crearClase' %} ">
+        <button>Agregar Clase</button>
+    </a>
+    <a href=" {% url 'HomePage' %} ">
+        <button>Volver</button>
+    </a>
     <ul>
         {% for clase in clases %}
         <li>
@@ -26,11 +31,5 @@
         <br>
         {% endfor %}
     </ul>
-    <a href=" {% url 'crearClase' %} ">
-        <button>Agregar Clase</button>
-    </a>
-    <a href=" {% url 'HomePage' %} ">
-        <button>Volver</button>
-    </a>
 </body>
 </html>

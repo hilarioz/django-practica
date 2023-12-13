@@ -7,29 +7,37 @@
     <title>{{titulo}}</title>
 </head>
 <body>
+
     <h2>{{titulo}}</h2>
 
-    <ul>
-        {% for cuota in cuotas %}
-        <li>
-            <p>
-                Alumno: {{cuota.alumno}}<br>
-                Fecha de emisión: {{cuota.emision}}<br>
-                Fecha de vencimiento: {{cuota.vencimiento}}<br>
-                Fecha de pago: {{cuota.pago}}<br>
-                Importe: {{cuota.alumno.plan.importe}}<br>
-                Nº Comprobante de Pago: {{cuota.id}}<br>
-            </p>
-        </li>
-        <hr>
-        <br>
-        {% endfor %}
-    </ul>
     <a href=" {% url 'crearCuota' %} ">
-        <button>Agregar Cuota</button>
+        <button>Agregar Pago</button>
     </a>
     <a href=" {% url 'HomePage' %} ">
         <button>Volver</button>
     </a>
+    
+    <ul>
+        <table>
+                <tr>
+                    <th>Alumno</th>
+                    <th>Emisión</th>
+                    <th>Fecha de Pago</th>
+                    <th>Importe</th>
+                    <th>Nº Comprobante</th>
+                </tr>        
+                {% for cuota in cuotas %}
+                    <tr>
+            
+                        <td>{{cuota.alumno}}</td>
+                        <td>{{cuota.emision}}</td>
+                        <td>{{cuota.pago}}</td>
+                        <td>{{cuota.alumno.plan.importe}}</td>
+                        <td>{{cuota.id}}</td>
+
+                    </tr>
+                {% endfor %}    
+        </table>
+    </ul>
 </body>
 </html>

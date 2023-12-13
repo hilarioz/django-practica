@@ -20,3 +20,6 @@ class claseForm(ModelForm):
     class Meta:
         model = Clase
         fields = '__all__'
+        labels = {
+            'asistencia': ('Asistencia del Entrenador'),
+        }
